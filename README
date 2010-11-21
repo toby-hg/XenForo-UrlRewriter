@@ -17,6 +17,8 @@ To test that it's working, just create a post on the forum with this URL in the 
 
   
 Currently Supported Site - Test URL:
+* Affiliate Schemes
+** Amazon (all countries) - http://www.amazon.co.uk/Lighted-Leather-Burgundy-Display-Generation/dp/B003DZ166Q/ref=br_lf_m_1000425123_1_3_ttl?ie=UTF8&s=electronics&pf_rd_p=217325627&pf_rd_s=center-3&pf_rd_t=1401&pf_rd_i=1000425123&pf_rd_m=A3P5ROKL5A1OLE&pf_rd_r=052A7YB9W01ZB6HXKBQQ
 * Maps and Fitness
 ** Bikely  - http://www.bikely.com/maps/bike-path/Princes-Risborough-80km
 ** Bikemap - http://www.bikemap.net/route/714312
@@ -29,6 +31,10 @@ Currently Supported Site - Test URL:
 ** YouTube Short URL HD - http://youtu.be/U0CGsw6h60k?hd=1
 ** YouTube Short URL - http://youtu.be/U0CGsw6h60k
 
+
+
+
+NOTE: For the affiliate schemes you should edit the replacements to insert your tracking tag. When this addon has matured a little an interface will be provided for you to do this without having to edit the code.
 
 
 

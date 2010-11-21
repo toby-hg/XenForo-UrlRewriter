@@ -36,6 +36,7 @@ class UrlRewriter_BbCode_Formatter_Base extends XFCP_UrlRewriter_BbCode_Formatte
   }
 
   protected $_find = array(
+    '~http://([a-z\.]+\.)?amazon\.([a-z\.]+)/([\w-]+/)?(dp|gp/product|exec/obidos/asin)/(\w+/)?(\w{10}).*~', // Amazon Affiliate
     '~http://www.bikely.com/maps/bike-path/([\w\d_-]+)~', // Bikely
     '~http://www.bikemap.net/route/(\d+)~', // Bikemap
     '~http://www.everytrail.com/view_trip.php\?trip_id=(\d+)~', // Every Trail
@@ -48,6 +49,7 @@ class UrlRewriter_BbCode_Formatter_Base extends XFCP_UrlRewriter_BbCode_Formatte
   );
 
   protected $_replace = array(
+    '<a href="http://$1amazon.${2}/gp/product/${6}?tag=buro9&creativeASIN=${6}">[NAME]</a>', // Amazon Affilate - Replace 'buro9' with your affiliate tag
     '<a href="[URL]">[NAME]</a><br /><iframe id="rmiframe" style="height:[HEIGHT]px;background:#eee;" width="100%" frameborder="0" scrolling="no" src="http://www.bikely.com/maps/bike-path/${1}/embed/1"></iframe>', // Bikely
     '<a href="[URL]">[NAME]</a></br><iframe width="[WIDTH]" height="[HEIGHT]" frameborder="0" src="http://www.bikemap.net/route/${1}/widget?width=[WIDTH]&height=[HEIGHT]&extended=true&maptype=2&unit=miles&redirect=no"></iframe>', // Bikemap
     '<a href="[URL]">[NAME]</a><br /><iframe src="http://www.everytrail.com/iframe2.php?trip_id=${1}&width=[WIDTH]&height=[HEIGHT]" marginheight="0" marginwidth="0" frameborder="0" scrolling="no" width="[WIDTH]" height="[HEIGHT]"></iframe>', // Every Trail
