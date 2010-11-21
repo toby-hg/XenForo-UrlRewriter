@@ -1,0 +1,13 @@
+UrlRewriter is a XenForo application to allow forum owners to enable auto media embed functionality and to implement affiliate schemes.
+
+XenForo [url] tags are rewritten at the time of render, which adds a slight processing overhead (whilst XenForo does not have a post_parsed cache) but does mean that the underlying post is unmodified = this application will not edit anything in your database and is guaranteed to be non-damaging in any way.
+
+To install:
+
+1) Upload the UrlRewriter directory into your XenForo /library/ directory on your web server.
+
+2) In your Admin Dashboard under Home > Add-ons > Install Add-on, browse to the addon_UrlRewriter.xml and click "Install Add-on".
+
+To test that it's working, just create a post on the forum with this URL in the body:
+
+  http://www.youtube.com/watch?v=U0CGsw6h60k
