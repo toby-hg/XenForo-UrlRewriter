@@ -32,7 +32,7 @@ class UrlRewriter_BbCode_Formatter_Base extends XFCP_UrlRewriter_BbCode_Formatte
       }
     }
 
-    return $text;
+    return $text; 
   }
 
   protected $_find = array(
@@ -41,9 +41,10 @@ class UrlRewriter_BbCode_Formatter_Base extends XFCP_UrlRewriter_BbCode_Formatte
     '~http://www.everytrail.com/view_trip.php\?trip_id=(\d+)~', // Every Trail
     '~http://connect.garmin.com/activity/(\d+)~', // Garmin Connect
     '~http://www.gpsies.com/map.do\?fileId=([\w\d_-]+)~', // GPSies
-    '~http://[\w]+\.youtube\.[\w]+/watch\?v=([\w-]+)[\w&;=]*[\#t=]*([\d]*)s?~', // YouTube
-    '~http://[\w]+\.youtube\.[\w]+/watch\?fmt=([18|22]+)&[amp;]*v=([\w-]+)[\w&;=]*[\#t=]*(\d*)s?~', // YouTube HD
-    '~http://[\w]+\.youtube\.com/view_play_list\?p=([\w]+)~' // YouTube Playlist
+    '~http://(www\.)?youtube\.com/watch\?v=([^&]+)&(amp;)?hd=1~', // YouTube HD
+    '~http://(www\.)?youtube\.com/watch\?v=([^&]+)~', // YouTube
+    '~http://youtu\.be/([^?]+)?hd=1~', // YouTube Short HD
+    '~http://youtu\.be/([^&]+)~', // YouTube Short
   );
 
   protected $_replace = array(
@@ -52,9 +53,10 @@ class UrlRewriter_BbCode_Formatter_Base extends XFCP_UrlRewriter_BbCode_Formatte
     '<a href="[URL]">[NAME]</a><br /><iframe src="http://www.everytrail.com/iframe2.php?trip_id=${1}&width=[WIDTH]&height=[HEIGHT]" marginheight="0" marginwidth="0" frameborder="0" scrolling="no" width="[WIDTH]" height="[HEIGHT]"></iframe>', // Every Trail
     '<a href="[URL]">[NAME]</a><br /><iframe width="[WIDTH]" height="[HEIGHT]" frameborder="0" src="http://connect.garmin.com/activity/embed/${1}"></iframe>', // Garmin Connect
     '<a href="[URL]">[NAME]</a><br /><iframe src="http://www.gpsies.com/mapOnly.do?fileId=${1}" width="[WIDTH]" height="[HEIGHT]" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>', // GPSies
-    '<object width="[WIDTH]" height="[HEIGHT]"><param name="movie" value="http://www.youtube.com/v/${1}&start=${2}"></param><param name="allowFullScreen" value="true"></param><embed src="http://www.youtube.com/v/${1}&start=${2}" type="application/x-shockwave-flash" allowfullscreen="true" width="[WIDTH]" height="[HEIGHT]" wmode="transparent"></embed></object>', // YouTube
-    '<object width="[WIDTH]" height="[HEIGHT]"><param name="movie" value="http://www.youtube.com/v/${2}&hl=en&fs=1&rel=0&ap=%2526fmt%3D${1}&start=${2}"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/${2}&hl=en&fs=1&rel=0&ap=%2526fmt%3D${1}&start=${2}" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="[WIDTH]" height="[HEIGHT]"></embed></object>', // YouTube HD
-    '<object width="[WIDTH]" height="[HEIGHT]"><param name="movie" value="http://www.youtube.com/p/${1}"></param><param name="background" value="transparent"></param><embed src="http://www.youtube.com/p/${1}" type="application/x-shockwave-flash" width="[WIDTH]" height="[HEIGHT]" wmode="transparent"></embed></object>' // YouTube Playlist
+    '<object width="[WIDTH]" height="[HEIGHT]"><param name="movie" value="http://www.youtube.com/v/${2}?fs=1&amp;hl=en_GB&amp;rel=0&amp;hd=1"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/${2}?fs=1&amp;hl=en_GB&amp;rel=0&amp;hd=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="[WIDTH]" height="[HEIGHT]"></embed></object>', // YouTube HD
+    '<object width="[WIDTH]" height="[HEIGHT]"><param name="movie" value="http://www.youtube.com/v/${2}?fs=1&amp;hl=en_GB&amp;rel=0"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/${2}?fs=1&amp;hl=en_GB&amp;rel=0" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="[WIDTH]" height="[HEIGHT]"></embed></object>', // YouTube
+    '<object width="[WIDTH]" height="[HEIGHT]"><param name="movie" value="http://www.youtube.com/v/${1}?fs=1&amp;hl=en_GB&amp;rel=0&amp;hd=1"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/${1}?fs=1&amp;hl=en_GB&amp;rel=0&amp;hd=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="[WIDTH]" height="[HEIGHT]"></embed></object>', // YouTube Short HD
+    '<object width="[WIDTH]" height="[HEIGHT]"><param name="movie" value="http://www.youtube.com/v/${1}?fs=1&amp;hl=en_GB&amp;rel=0"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/${1}?fs=1&amp;hl=en_GB&amp;rel=0" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="[WIDTH]" height="[HEIGHT]"></embed></object>', // YouTube Short
   );
 }
 ?>
