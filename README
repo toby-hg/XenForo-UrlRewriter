@@ -11,3 +11,42 @@ To install:
 To test that it's working, just create a post on the forum with this URL in the body:
 
   http://www.youtube.com/watch?v=U0CGsw6h60k
+
+
+
+
+  
+Currently Supported Site - Test URL:
+* Maps and Fitness
+** Bikely  - http://www.bikely.com/maps/bike-path/Princes-Risborough-80km
+** Bikemap - http://www.bikemap.net/route/714312
+** Every Trail - http://www.everytrail.com/view_trip.php?trip_id=723506
+** Garmin Connect - http://connect.garmin.com/activity/55877482
+** GPSies - http://www.gpsies.com/map.do?fileId=ckhtmmzhuivpjgdi
+* Videos
+** YouTube - http://www.youtube.com/watch?v=U0CGsw6h60k
+
+
+
+
+
+Do you want to submit a URL rewrite definition for a site? Then this is what we need:
+
+1) A regular expression that will take the URL and match URLs for your given site:
+
+i.e.: http://www.gpsies.com/map.do\?fileId=([\w\d_-]+)
+
+2) Some HTML to replace that with:
+
+i.e.: <a href="[URL]">[NAME]</a><br /><iframe src="http://www.gpsies.com/mapOnly.do?fileId=${1}" width="[WIDTH]" height="[HEIGHT]" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+
+You have at your disposal these values:
+
+* [URL] = The original pre-processed URL
+* [NAME] = The bit of text that would've appeared between the <a> tags </a>.
+* [WIDTH] = The hard-coded default width for all embeds = 425
+* [HEIGHT] = The hard-coded default height for all embeds = 300
+
+3) An example test URL:
+
+i.e.: http://www.gpsies.com/map.do?fileId=ckhtmmzhuivpjgdi
