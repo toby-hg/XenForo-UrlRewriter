@@ -21,6 +21,7 @@ Supported Sites
 ---------------
   
 Currently Supported Site - Test URL:
+
 *  Affiliate Schemes
 *  *  Amazon (all countries) - `http://www.amazon.co.uk/Lighted-Leather-Burgundy-Display-Generation/dp/B003DZ166Q/ref=br_lf_m_1000425123_1_3_ttl?ie=UTF8&s=electronics&pf_rd_p=217325627&pf_rd_s=center-3&pf_rd_t=1401&pf_rd_i=1000425123&pf_rd_m=A3P5ROKL5A1OLE&pf_rd_r=052A7YB9W01ZB6HXKBQQ`
 *  *  eBay (pick a region) - `http://cgi.ebay.co.uk/Colnago-C40-full-Campagnolo-Record-carbone_W0QQitemZ130457071957QQcategoryZ98084QQcmdZViewItemQQ_trksidZp5197.m7QQ_trkparmsZalgo%3DLVI%26itu%3DUCI%26otn%3D2%26po%3DLVI%26ps%3D63%26clkid%3D5117350348837181446#ht_1164wt_881`
@@ -90,7 +91,8 @@ Do you want to submit a URL rewrite definition for a site? Then this is what we 
 You have at your disposal these values:
 
 *   [URL] = The original pre-processed URL
-*   [NAME] = The bit of text that would've appeared between the <a> tags </a>.
+*   [CACHEBUSTER] = A random numerical digit, mostly to be used to ensure that a URL is not cached
+*   [NAME] = The bit of text that would've appeared between the `<a>` tags `</a>`.
 *   [WIDTH] = The hard-coded default width for all embeds = 425
 *   [HEIGHT] = The hard-coded default height for all embeds = 300
 
