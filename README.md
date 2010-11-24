@@ -33,6 +33,7 @@ Currently Supported Site - Test URL:
 * * **GPSies**
 * Audio
 * * **Sound Cloud**
+* * **Sound Cloud Sets**
 * Video
 * * **YouTube HD**
 * * **YouTube**
