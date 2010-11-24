@@ -5,8 +5,8 @@ UrlRewriter is a XenForo application to allow forum owners to enable auto media 
 
 XenForo `[url]` tags are rewritten at the time of render, which adds a slight processing overhead (whilst XenForo does not have a post_parsed cache) but does mean that the underlying post is unmodified = this application will not edit anything in your database and is guaranteed to be non-damaging in any way.
 
-Supported Sites
----------------
+Installation
+------------
 
 To install:
 
@@ -49,7 +49,7 @@ The replacements for affiliates:
 
 Within the **Amazon** replacement:
 
-> Change the URL tag 'buro9' to your Amazon tracking code.
+    Change the URL tag 'buro9' to your Amazon tracking code.
 
 Within the **eBay** replacement:
 
